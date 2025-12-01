@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+	//srand(time(0));
+	//float sum = 0;
+	//const unsigned int N = 12;
+	//float arr[N];
+	//for (int i = 0; i < N; i++) 
+	//{
+	//	arr[i] = rand() % 12;
+	//}
+	//for (int i = 0; i < N; i++)
+	//{
+	//	cout << arr[i] << ' ';
+	//}
+
+	//for (int i = 0; i < N; i++) 
+	//{
+	//	sum += arr[i];
+	//}
+	//float man = 0;
+	//float ser = sum / N;
+	//for (int i = 0; i < N; i++)
+	//{
+	//	if (arr[i] < ser) {
+	//		man ++ 1;
+	//	}
+	//}
+	//
+
+	//float women = sum / N;
+
+	//cout << endl;
+	//cout << man << endl;
+
+	//cout << women << endl;
+
+	//cout << sum << endl;
+
+
+}
