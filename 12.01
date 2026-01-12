@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+//int getMin(int a, int b, int c)
+//{
+//	int min = a;
+//	if (b < min)
+//	{
+//		min = b;
+//	}
+//	if (c < min)
+//	{
+//		min = c;
+//	}
+//	return min;
+//}
+//
+//int getMax(int d, int f)
+//{
+//	int max = d;
+//	if (f > max)
+//	{
+//		max = f;
+//	}
+//	return max;
+//}
+
+
+int dod(int a, int b)
+{
+	cout << a + b;
+	return plus;
+}
+
+int main()
+{
+	int a, b;
+	cin >> a >> b;
+	int dodo = dod(a, b);
+	cout << dod;
+
+	//int d, f;
+	//cin >> d >> f;
+	//int max = getMax(d, f);
+	//cout << max;
+	
+	
+	/*
+	int a, b, c;
+	cin >> a >> b >> c;
+	int min = getMin(a, b, c);
+	cout << min;
+	return 0;*/
+}
