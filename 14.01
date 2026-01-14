@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+void sayHello()
+{
+	cout << "Privit! Ya tvoya persha function na c++" << endl;
+}
+void printSeparator()
+{
+	for (int i = 0; i < 20; i++)
+	{
+		cout << '*';
+	}
+}
+void doubleNumber(int n)
+{
+	int mnon = n * 2;
+	cout << mnon << endl;
+}
+
+int main()
+{
+	{
+		sayHello();
+	}
+	printSeparator();
+	doubleNumber(2);
+}
