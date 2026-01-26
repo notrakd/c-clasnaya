@@ -1,0 +1,46 @@
+#include <iostream>
+#include "Header.h"
+using namespace std;
+
+int main()
+{
+	//const int N = 3;
+	//int arr[N] = { 1, 2, 3 };
+	//cout << mass_sum(arr, N);
+
+	//const int N = 3;
+	//int arr[N] = { 1, 2, 3 };
+	//cout << parr_el(arr, N);
+
+
+}
+
+
+
+
+#pragma once
+//int mass_sum(int arr[], int size)
+//{
+//	int sum = 0;
+//	for (int i = 0; i < size; i++)
+//	{
+//		sum += arr[i];
+//	}
+//	return sum;
+//}
+//
+//int parr_el(int arr[], int size)
+//{
+//	int parr = 0;
+//	for (int i = 0; i < size; i++)
+//	{
+//		if (arr[i] % 2 == 0)
+//		{
+//			parr++;
+//		}
+//	}
+//
+//	return parr;
+//}
+
+
