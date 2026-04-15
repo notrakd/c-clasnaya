@@ -1,0 +1,86 @@
+#include <iostream>
+#include "Struck.h"
+using namespace std;
+
+
+int main()
+{
+	//Product pr1 = Create_product();
+	//Print_product(pr1);
+
+	unsigned int size;
+	cout << "Enter size: ";
+	cin >> size;
+
+	Product* product = new Product[size];
+	
+	for (size_t i = 0; i < size; i++)
+	{
+		product[i] = Create_product();
+	}
+
+	for (size_t i = 0; i < size; i++)
+	{
+		Print_product(product[i]);
+	}
+
+	delete[] product;
+	//delete[] pr1.name;
+}
+
+
+
+
+#pragma once
+using namespace std;
+typedef unsigned int unit;
+typedef unsigned short ushort;
+const unit N = 50;
+//структуры
+struct Date {
+	ushort day;
+	ushort month;
+	ushort year;
+};
+
+struct Product
+{
+	unit id;
+	char* name;
+	double price;
+	unit count;
+	Date date;
+};
+
+
+
+//функции
+Product Create_product()
+{
+	Product pr;
+	static int id = 1;
+	pr.id = id++;
+	cout << "Enter prise: ";
+	cin >> pr.price;
+	cout << "Enter count: ";
+	cin >> pr.count;
+	cout << "Enter date(YYY MM DD): ";
+	cin >> pr.date.year >> pr.date.month >> pr.date.day;
+	cout << "Enter name ";
+	char name[N];
+	cin.ignore();
+	cin.getline(name, N);
+	pr.name = new char[strlen(name) + 1];
+	strcpy_s(pr.name, strlen(name) + 1, name);
+	return pr;
+}
+
+void Print_product(Product& pr)
+{
+	cout << "id" << pr.id << endl;
+	cout << "name" << pr.name << endl;
+	cout << "price" << pr.price << endl;
+	cout << "count" << pr.count << endl;
+	cout << "date(day month year)" << pr.date.day << "-" << pr.date.month << "-" << pr.date.year << endl;
+}
+
