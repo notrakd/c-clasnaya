@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+#include "Header.h"
+
+int main() {
+
+    FILE* file = nullptr;
+    char l[100];
+    cin.getline(l, 100);
+    file_file(file, l);
+    return 0;
+}
+
+
+
+
+#pragma once
+
+void file_file(FILE* file, char* lines)
+{
+	if (fopen_s(&file, "giel.txt", "a") == 0)
+	{
+		fputs(lines, file);
+		fclose(file);
+	}
+	else
+	{
+		cout << "HAHHAHAHAHHAHAHHAHAHA LOX";
+	}
+}
