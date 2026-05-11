@@ -1,0 +1,79 @@
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+struct Point
+{
+    int x;
+    int y;
+};
+
+int main()
+{
+    const unsigned int N = 5;
+
+    Point points[N] =
+    {
+        {3,4},
+        {3,1},
+        {8,9},
+        {6,-3},
+        {3,0}
+    };
+
+    FILE* file = fopen("data.bin", "wb");
+
+    if (file != nullptr)
+    {
+        fwrite(points, sizeof(Point), N, file);
+        for(int i = 0; i < N; i++)
+        {
+            cout << points[i].x << " " << points[i].y << endl;
+        }
+        fclose(file);
+    }
+
+    return 0;
+}
+//     int n = 10;
+//     char ch = 'A';
+//     bool bl = 1;
+//     double db = 2;
+//     short sh = 4;
+
+//     FILE* file = fopen("data.bin", "wb");
+
+//     if(file != nullptr)
+//     {
+//         fwrite(&n, sizeof(n), 1, file);
+//         fwrite(&ch, sizeof(ch), 1, file);
+//         fwrite(&bl, sizeof(bl), 1, file);
+//         fwrite(&db, sizeof(db), 1, file);
+//         fwrite(&sh, sizeof(sh), 1, file);
+
+//         fclose(file);
+//     }
+
+//     int nt;
+//     char cht;
+//     bool bl2;
+//     double db1;
+//     short sh2;
+
+//     file = fopen("data.bin", "rb");
+
+//     if(file != nullptr)
+//     {
+//         fread(&nt, sizeof(nt), 1, file);
+//         fread(&cht, sizeof(cht), 1, file);
+//         fread(&bl2, sizeof(bl2), 1, file);
+//         fread(&db1, sizeof(db1), 1, file);
+//         fread(&sh2, sizeof(sh2), 1, file);
+
+//         fclose(file);
+//     }
+
+//     cout << nt << " " << cht << " " << bl2 << " " << db1 << " "  << sh2 << endl;
+
+//     return 0;
