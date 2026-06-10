@@ -1,0 +1,43 @@
+
+//
+//
+//#include <iostream>
+//#include <string>
+//#include <Windows.h>
+//using namespace std;
+//
+//void typewrite(string& text, int delay_ms = 50) {
+//	for (int i = 0; i < text.length(); i++) {
+//		cout << text[i] << std::flush;
+//		Sleep(delay_ms);
+//	}
+//	std::cout << std::endl;
+//}
+//
+//int main() {
+//	setlocale(LC_ALL, "Russian");
+//
+//	string message = "Привет! Это демонстрация эффекта печатной машинки на C++.";
+//	typewrite(message, 70); 
+//
+//	return 0;
+//}
+
+
+//#include <iostream>
+//
+//// ANSI-коды для изменения цвета текста
+//const std::string RESET = "\033[0m";
+//const std::string RED = "\033[31m";
+//const std::string GREEN = "\033[32m";
+//const std::string BOLD_YELLOW = "\033[1;33m";
+//const std::string UNDERLINE_CYAN = "\033[4;36m";
+//
+//int main() {
+//    std::cout << RED << "Этот текст красный!" << RESET << "\n";
+//    std::cout << GREEN << "Этот текст зеленый!" << RESET << "\n";
+//    std::cout << BOLD_YELLOW << "Жирный желтый текст!" << RESET << "\n";
+//    std::cout << UNDERLINE_CYAN << "Подчеркнутый голубой!" << RESET << "\n";
+//
+//    return 0;
+//}
