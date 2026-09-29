@@ -1,0 +1,71 @@
+Python version
+
+
+
+
+import random
+
+cinema = [[random.randint(0, 1) for _ in range(20)] for _ in range(10)]
+
+cinema[0] = [1] * 20
+
+for i, row in enumerate(cinema, 1):
+    print(row)
+
+print("Ряди, у яких всі місця продано:")
+
+for i, row in enumerate(cinema, 1):
+    if all(row):
+        print(i)
+
+
+
+
+
+и с++
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    srand(time(0));
+
+    int cinema[10][20];
+
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 20; j++) {
+            cinema[i][j] = rand() % 2;
+        }
+    }
+
+    for (int j = 0; j < 20; j++) {
+        cinema[0][j] = 1;
+    }
+
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 20; j++) {
+            cout << cinema[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    cout << "Rady, u yakykh vsi mistsya prodano:" << endl;
+
+    for (int i = 0; i < 10; i++) {
+        bool allSold = true;
+
+        for (int j = 0; j < 20; j++) {
+            if (cinema[i][j] == 0) {
+                allSold = false;
+                break;
+            }
+        }
+
+        if (allSold) {
+            cout << i + 1 << endl;
+        }
+    }
+
+    return 0;
+}
