@@ -1,0 +1,85 @@
+
+#include <iostream>
+using namespace std;
+
+class Bank
+{
+private:
+    string name;
+    double money;
+
+public:
+    Bank() = default;
+
+    Bank(string name, double money)
+    {
+        this->name = name;
+        this->money = (money < 0) ? 0 : money;
+    }
+
+    string getName()
+    {
+        return name;
+    }
+
+    double getMoney()
+    {
+        return money;
+    }
+
+    void setName(string name)
+    {
+        this->name = name;
+    }
+
+    void setMoney(double money)
+    {
+        this->money = (money < 0) ? 0 : money;
+    }
+};
+
+Bank* findBank(Bank banks[], int size, string name)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (banks[i].getName() == name)
+        {
+            return &banks[i];
+        }
+    }
+
+    return nullptr;
+}
+
+int main()
+{
+    cout << "Bank Application!\n";
+
+    const int N = 4;
+
+    Bank banks[N] = {
+        {"Private Bank", 3e5},
+        {"Raifaisen Bank", 2.5e4},
+        {"MonoBank", 4.2e3},
+        {"VST", 2.6e2}
+    };
+
+    string name;
+
+    cout << "Enter bank name: ";
+    getline(cin, name);
+
+    Bank* found = findBank(banks, N, name);
+
+    if (found != nullptr)
+    {
+        cout << "Bank found: " << found->getName() << endl;
+        cout << "Money: " << found->getMoney() << endl;
+    }
+    else
+    {
+        cout << "Bank not found!\n";
+    }
+
+    return 0;
+}
