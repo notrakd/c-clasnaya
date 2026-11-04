@@ -1,0 +1,93 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+class Sorting {
+private:
+    int* _arr = nullptr;
+    size_t _size = 0;
+
+public:
+    Sorting(int* arr, size_t size) {
+        _size = size;
+        if (size != 0 && arr != nullptr) {
+            _arr = new int[_size];
+            for (size_t i = 0; i < _size; ++i) {
+                _arr[i] = arr[i];
+            }
+        }
+    }
+
+    int* get_arr() {
+        return _arr;
+    }
+
+    void gnome_sort_asc() {
+        if (_size > 1 && _arr != nullptr) {
+            size_t i = 0;
+            while (i < _size - 1) {
+                if (_arr[i] > _arr[i + 1]) {
+                    swap(_arr[i], _arr[i + 1]);
+                    if (i == 0) {
+                        ++i;
+                    } else {
+                        --i;
+                    }
+                } else {
+                    ++i;
+                }
+            }
+        }
+    }
+
+    ~Sorting() {
+        if (_arr != nullptr) {
+            delete[] _arr;
+        }
+    }
+
+    size_t count_iterations_gnome_sort_asc() {
+        if (_size > 1 && _arr != nullptr) {
+            size_t i = 0;
+            size_t count = 0;
+            while (i < _size - 1) {
+                if (_arr[i] > _arr[i + 1]) {
+                    swap(_arr[i], _arr[i + 1]);
+                    if (i == 0) {
+                        ++i;
+                    } else {
+                        --i;
+                    }
+                } else {
+                    ++i;
+                }
+                ++count;
+            }
+            return count;
+        }
+        return 0;
+    }
+};
+
+int main() {
+    size_t n;
+    cout << "Enter n: ";
+    cin >> n;
+    if (n > 0) {
+        int* arr = new int[n];
+        for (size_t i = 0; i < n; i++) {
+            cout << "Enter arr[" << i << "]: ";
+            cin >> arr[i];
+        }
+        Sorting sort(arr, n);
+        size_t iterations = sort.count_iterations_gnome_sort_asc();
+        cout << "Number of iterations for Gnome Sort: " << iterations << endl;
+        int* sortedArr = sort.get_arr();
+        for (size_t i = 0; i < n; i++) {
+            cout << sortedArr[i] << ' ';
+        }
+        cout << endl;
+        delete[] arr;
+    }
+    return 0;
+}
